@@ -29,7 +29,7 @@ Check out the live site: [https://your-live-site.com](https://your-live-site.com
   <img src="https://github.com/user-attachments/assets/016a1fe9-d945-43fd-87e2-eced9882434c" alt="Shop Page" width="300">
   <img src="https://github.com/user-attachments/assets/d72507f0-0005-47b2-ab24-9e42a167e31f" alt="Profile Page" width="300">
   <img src="https://github.com/user-attachments/assets/ee1ef60f-1bfc-49db-b1ed-a4d9ad4ca0f3" alt="Checkout" width="300">
-  <img src="https://github.com/user-attachments/assets/081a9a93-efc4-45a2-80b7-bc95642a2b27" alt="Payment Success" width="300">
+  <img src="https://github.com/user-attachments/assets/7a7ae5ff-5cd1-4c89-b7e9-507ba8913445"  alt="Payment Success" width="300">
 </div>
 
 ## Admin Side
