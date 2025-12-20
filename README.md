@@ -25,9 +25,9 @@ Check out the live site: [https://your-live-site.com](https://your-live-site.com
 ## User Side
 <div style="display:flex; flex-wrap: wrap; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/c6d22d49-29b0-4037-87ac-968fa2281d3b" alt="Home Page" width="300" height="200">
-  <img src="https://github.com/user-attachments/assets/016a1fe9-d945-43fd-87e2-eced9882434c" alt="Shop Page" width="300" height="200">
   <img src="https://github.com/user-attachments/assets/dae73bd7-bee0-458c-abf8-b84c4cafdc29" alt="Cart Page" width="300" height="200">
   <img src="https://github.com/user-attachments/assets/d72507f0-0005-47b2-ab24-9e42a167e31f" alt="Profile Page" width="300" height="200">
+  <img src="https://github.com/user-attachments/assets/016a1fe9-d945-43fd-87e2-eced9882434c" alt="Shop Page" width="300" height="200">
   <img src="https://github.com/user-attachments/assets/ee1ef60f-1bfc-49db-b1ed-a4d9ad4ca0f3" alt="Checkout" width="300" height="200">
   <img src="https://github.com/user-attachments/assets/081a9a93-efc4-45a2-80b7-bc95642a2b27" alt="Payment Success" width="300" height="200">
 </div>
