@@ -24,6 +24,26 @@ Check out the live site: [https://your-live-site.com](https://your-live-site.com
 ## Screenshots
 ##User side
 <div style="display:flex; flex-wrap: wrap; gap: 10px;">
+  <div>
+    <img src="https://github.com/user-attachments/assets/c6d22d49-29b0-4037-87ac-968fa2281d3b" alt="Home Page" width="300"><br>
+    Home Page
+  </div>
+  <div>
+    <img src="https://github.com/user-attachments/assets/016a1fe9-d945-43fd-87e2-eced9882434bf" alt="Shop Page" width="300"><br>
+    Shop Page
+  </div>
+  <div>
+    <img src="https://github.com/user-attachments/assets/dae73bd7-bee0-458c-abf8-b84c4cafdc29" alt="Cart Page" width="300"><br>
+    Cart Page
+  </div>
+  <div>
+    <img src="https://github.com/user-attachments/assets/d72507f0-0005-47b2-ab24-9e42a167e31f" alt="Profile Page" width="300"><br>
+    Profile Page
+  </div>
+</div>
+
+
+<div style="display:flex; flex-wrap: wrap; gap: 10px;">
 <img src="https://github.com/user-attachments/assets/c6d22d49-29b0-4037-87ac-968fa2281d3b" alt="Home Page" width="300">
 <img src="https://github.com/user-attachments/assets/016a1fe9-d945-43fd-87e2-eced9882434c"  alt="Shop Page" width="300">
 <img src="https://github.com/user-attachments/assets/dae73bd7-bee0-458c-abf8-b84c4cafdc29" alt="Cart Page" width="300">
