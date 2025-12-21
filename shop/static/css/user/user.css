@@ -15,9 +15,10 @@ body {
     width: 100%;
     min-width: 320px;
     line-height: 1.5;
-     background: red !important;
 }
-
+body {
+    background: red !important;
+}
 a {
     text-decoration: none !important;
 }
