@@ -6,9 +6,10 @@
 
 <div class="container py-4">
 
-    <h2 class="mb-4 text-center mb-5">Shop Products 🛍️</h2>
+    <h2 class="mb-4 text-center mb-5">Shop Products </h2>
 
-    <form id="filter-form" class="row mb-4 g-2 align-items-center">
+
+    <form id="filter-form" class="row mb-4 g-2 align-items-center mx-5">
         <div class="col-md-6">
             <input type="text" name="search" id="search-input" class="form-control" placeholder="Search products..." value="{{ request.GET.search }}"onkeyup
             ="this.form.submit()">
@@ -21,9 +22,6 @@
                 {% endfor %}
             </select>
         </div>
-        <!-- <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100">Filter</button>
-        </div> -->
     </form>
 
     <!-- Product Grid -->

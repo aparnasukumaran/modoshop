@@ -2,48 +2,44 @@
 <div class="row g-4 mt-5">
     {% for product in products %}
     <div class="col-md-3 d-flex">
-        <div class="card flex-fill h-100">
+        <div class="shop-card flex-fill h-100">
         
             {% if product.image and product.image.name %}
-        <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="card-img-top">
-          {% endif %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}"  class="shop-card-img">
+            {% endif %}
 
-            <div class="card-body d-flex flex-column shop-card-body">
+            <div class="shop-card-body d-flex flex-column">
                 <h5 class="shop-card-title">{{ product.name }}</h5>
-                <p class="shop_card_text">
-                        <span class="text-danger fw-bold">₹{{ product.offer_price }}</span>
-                        <small class="text-muted"><del>₹{{ product.price }}</del></small>
-                    </p>
+                <p class="shop-card-price">
+                    <span class="text-danger fw-bold">₹{{ product.offer_price }}</span>
+                    <small class="text-muted"><del>₹{{ product.price }}</del></small>
+                </p>
+
                 <div class="mt-auto d-flex justify-content-between align-items-center">
+                    
+                    <a href="{% url 'product_detail' product.slug %}" class="shop-btn-primary btn-sm">
+                        View More
+                    </a>
 
-    <!-- Left: View More -->
-    <a href="{% url 'product_detail' product.slug %}"
-       class="btn btn-primary btn-sm">
-        View More
-    </a>
+                   
+                    <div class="d-flex align-items-center gap-1 mb-0">
+                        <a href="{% url 'add_to_cart' product.id %}" class="shop-btn-outline btn-sm ">
+                            <i class="bi bi-cart3"></i>
+                        </a>
 
-    <!-- Right: Cart + Wishlist -->
-    <div class="d-flex align-items-center gap-2">
-
-        <a href="{% url 'add_to_cart' product.id %}"
-           class="btn btn-outline-secondary btn-sm">
-            <i class="bi bi-cart3"></i>
-        </a>
-
-        {% if product.id in wishlist_ids %}
-            <a href="{% url 'toggle_wishlist' product.id %}" class="heart-btn heart-shop">
-                <i class="bi bi-heart-fill text-danger fs-5"></i>
-            </a>
-        {% else %}
-            <a href="{% url 'toggle_wishlist' product.id %}" class="heart-btn heart-shop">
-                <i class="bi bi-heart fs-5"></i>
-            </a>
-        {% endif %}
-
-    </div>
-</div>
-
+                        {% if product.id in wishlist_ids %}
+                            <a href="{% url 'toggle_wishlist' product.id %}" class="shop-heart active ">
+                                <i class="bi bi-heart-fill text-danger fs-5"></i>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'toggle_wishlist' product.id %}" class="shop-heart">
+                                <i class="bi bi-heart fs-5"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     {% endfor %}

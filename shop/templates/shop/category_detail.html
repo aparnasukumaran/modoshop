@@ -5,7 +5,7 @@
 
 <div class="container mb-4 py-4">
 
-    <!-- Category Header -->
+
     <div class="text-center mb-4">
         <h2 class="fw-bold">{{ category.name }}</h2>
 
@@ -17,7 +17,7 @@
 
     <hr>
 
-    <!-- If category has items -->
+
     {% if category.products.all %}
     <h4 class="mb-3">Latest {{ category.name }} Picks for You</h4>
 
@@ -46,12 +46,12 @@
                     {% endif %}
  
 <div class="product-action-icons">
-    <!-- Add to Cart Icon -->
+
     <a href="{% url 'add_to_cart' product.id %}" class="icon-btn">
         <i class="bi bi-cart3"></i>
     </a>
 
-    <!-- Wishlist Icon -->
+
     {% if product.id in wishlist_ids %}
         <a href="{% url 'toggle_wishlist' product.id %}" class="icon-btn">
             <i class="bi bi-heart-fill text-danger"></i>

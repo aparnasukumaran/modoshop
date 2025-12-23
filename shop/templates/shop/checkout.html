@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-            <!-- Header -->
+
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="fw-bold">Checkout</h3>
                 <a href="{% url 'cart_page' %}" class="btn btn-outline-secondary">
@@ -34,32 +34,32 @@
                         </div>
 
                         <!-- Quantity Controls -->
-                         <div style="flex: 1; text-align: center;">
+                        <div style="flex: 1; text-align: center;">
                             {% if buy_now %}
-                                Quantity: {{ item.quantity }}
+                            Quantity: {{ item.quantity }}
                             {% else %}
-                        <div class="d-flex align-items-center gap-2" style="flex: 1; justify-content: center;">
-                            <!-- Decrease Quantity -->
-                            <form action="{% url 'update_quantity' item.id %}?next=checkout" method="POST"
-                                style="display:inline;">
-                                {% csrf_token %}
-                                <input type="hidden" name="action" value="decrease">
-                                <button type="submit" class="btn btn-sm btn-outline-secondary px-2">-</button>
-                            </form>
+                            <div class="d-flex align-items-center gap-2" style="flex: 1; justify-content: center;">
+                                <!-- Decrease Quantity -->
+                                <form action="{% url 'update_quantity' item.id %}?next=checkout" method="POST"
+                                    style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="decrease">
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary px-2">-</button>
+                                </form>
 
-                            <span class="px-2">{{ item.quantity }}</span>
+                                <span class="px-2">{{ item.quantity }}</span>
 
-                            <!-- Increase Quantity -->
-                            <form action="{% url 'update_quantity' item.id %}?next=checkout" method="POST"
-                                style="display:inline;">
-                                {% csrf_token %}
-                                <input type="hidden" name="action" value="increase">
-                                <button type="submit" class="btn btn-sm btn-outline-secondary px-2">+</button>
-                            </form>
+                                <!-- Increase Quantity -->
+                                <form action="{% url 'update_quantity' item.id %}?next=checkout" method="POST"
+                                    style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="increase">
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary px-2">+</button>
+                                </form>
+                            </div>
+                            {% endif %}
                         </div>
-                                    {% endif %}
-                        </div>
-                        
+
                         <!-- Total Price -->
                         <span style="flex: 1; text-align: right;">₹{{ item.total_price|floatformat:2 }}</span>
                     </li>
@@ -89,11 +89,12 @@
                 <form method="POST" id="checkoutForm">
                     {% csrf_token %}
 
-                    
-            <div class="mb-3 ">
-                <label for="address" class="form-label">Shipping Address:</label>
-                <textarea class="form-control shadow-none" id="address" name="address" rows="3" required></textarea>
-            </div>
+
+                    <div class="mb-3 ">
+                        <label for="address" class="form-label">Shipping Address:</label>
+                        <textarea class="form-control shadow-none" id="address" name="address" rows="3"
+                            required></textarea>
+                    </div>
 
 
                     <h5 class="mb-3">Payment Method</h5>
@@ -113,15 +114,16 @@
                     </div>
 
                     <!-- Terms & Privacy Checkbox -->
-    <div class="form-check mb-4">
-        <input class="form-check-input" type="checkbox" id="termsCheckbox">
-        <label class="form-check-label" for="termsCheckbox">
-            I agree to the <a href="{% url 'terms_of_service' %}" target="_blank">Terms of Service</a> and 
-            <a href="{% url 'privacy_policy' %}" target="_blank">Privacy Policy</a>
-        </label>
-    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="termsCheckbox">
+                        <label class="form-check-label" for="termsCheckbox">
+                            I agree to the <a href="{% url 'terms_of_service' %}" target="_blank">Terms of Service</a>
+                            and
+                            <a href="{% url 'privacy_policy' %}" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
 
-                    <button type="submit" class="btn btn-success w-100" id="placeOrderBtn"  disabled>
+                    <button type="submit" class="btn btn-success w-100" id="placeOrderBtn" disabled>
                         Place Order
                     </button>
                 </form>
@@ -136,7 +138,7 @@
     const checkbox = document.getElementById('termsCheckbox');
     const placeOrderBtn = document.getElementById('placeOrderBtn');
 
-    checkbox.addEventListener('change', function() {
+    checkbox.addEventListener('change', function () {
         placeOrderBtn.disabled = !this.checked;
     });
 </script>

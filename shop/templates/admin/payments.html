@@ -24,13 +24,13 @@
            <td>{{ payment.order.user }}</td>
            <td>{{ payment.order.booked_at|date:"d/ m/ Y h:i a" }}</td>
 
-<td>
-    {% for item in payment.order.items.all %}
-        {{ item.product.name }} (x{{ item.quantity }})<br>
-    {% empty %}
-        -
-    {% endfor %}
-</td>
+            <td>
+            {% for item in payment.order.items.all %}
+            {{ item.product.name }} (x{{ item.quantity }})<br>
+            {% empty %}
+              -
+            {% endfor %}
+            </td>
           
             <td>{{ payment.order.id }}</td>
             <td>{{ payment.method }}</td>

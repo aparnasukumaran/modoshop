@@ -10,10 +10,14 @@
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+    <link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/user/user.css' %}">
+
 </head>
 
 
@@ -22,23 +26,20 @@
 {% include "includes/messages.html" %}
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg sticky-top  py-3">
+    <nav class="navbar navbar-expand-lg sticky-top  py-1">
     <div class="container d-flex align-items-center">
 
-        <!-- Brand -->
-        <div class="brand-cut px-3 py-2">
+        <div class="brand-cut px-2 py-1">
             <a class="navbar-brand fw-bold fs-4" href="#">Modo</a>
         </div>
 
-        <!-- Toggler button -->
         <button class="navbar-toggler ms-3 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Collapsible nav links + profile -->
-        <div class="collapse navbar-collapse mt-1" id="navbarMenu">
-            <div class="nav-box px-2 py-2 d-flex align-items-center ms-auto flex-wrap justify-content-end" id="navBox">
-                <ul class="navbar-nav me-3 d-flex flex-row flex-wrap align-items-center">
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <div class="nav-box d-flex align-items-center ms-auto mt-2" id="navBox">
+                <ul class="navbar-nav d-flex flex-row align-items-center gap-3 mb-0">
                     <li class="nav-item mx-2"><a class="nav-link fw-semibold" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item mx-2"><a class="nav-link fw-semibold" href="{% url 'shop' %}">Shop</a></li>
                     <li class="nav-item mx-2"><a class="nav-link fw-semibold" href="{% url 'about' %}">About</a></li>
@@ -61,11 +62,11 @@
 
                 <!-- Profile -->
                 <div class="dropdown ms-3 d-flex align-items-center">
-                    <a class="d-flex align-items-center" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown">
+                    <a class="d-flex" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown">
                         {% if request.user.profile.profile_image %}
-                        <img src="{{ request.user.profile.profile_image.url }}" class="rounded-circle" width="40" height="40" style="object-fit:cover;">
+                        <img src="{{ request.user.profile.profile_image.url }}" class="rounded-circle"  style="object-fit:cover;">
                         {% else %}
-                        <img src="{% static 'images/default_avatar.png' %}" class="rounded-circle" width="40" height="40" style="object-fit:cover;">
+                        <img src="{% static 'images/default_avatar.png' %}" class="rounded-circle" style="object-fit:cover;">
                         {% endif %}
                     </a>
 
@@ -78,8 +79,8 @@
                     </ul>
                 </div>
                 {% else %}
-                <div class="dropdown ms-3 mb-2">
-    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="dropdown ms-3">
+    <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
         Account
     </button>
     <ul class="dropdown-menu" aria-labelledby="authDropdown">
@@ -93,7 +94,9 @@
         </div>
 
     </div>
+
 </nav>
+
 
     <!-- MAIN CONTENT -->
     <div class="site-wrapper">
@@ -117,12 +120,12 @@
 </footer>
 
         <!-- Bootstrap JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'css/bootstrap/bootstrap.js' %}"></script>
         <script>
 const heartBtn = document.querySelector('.heart-btn');
 heartBtn.addEventListener('click', () => {
     heartBtn.classList.add('clicked');
-    setTimeout(() => heartBtn.classList.remove('clicked'), 350); // remove after animation
+    setTimeout(() => heartBtn.classList.remove('clicked'), 350); 
 });
 </script>
 </body>

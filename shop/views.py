@@ -22,7 +22,7 @@ from django.core.mail import send_mail
 from django.utils.timezone import make_aware
 from datetime import datetime
 
-# Create your views here.
+
 
 
 
@@ -95,7 +95,6 @@ def shop_view(request):
     search_query = request.GET.get('search', '')
     category_id = request.GET.get('category', '')
 
-    # ✅ SAFE wishlist handling
     if request.user.is_authenticated:
         wishlist_ids = list(
             Wishlist.objects.filter(user=request.user)
@@ -112,7 +111,7 @@ def shop_view(request):
 
     products = products.order_by('?')
 
-    # ✅ AJAX request
+    # AJAX request
     if request.headers.get('x-requested-with') == 'XMLHttpRequest':
         html = render(
             request,
@@ -124,7 +123,6 @@ def shop_view(request):
         ).content.decode('utf-8')
         return JsonResponse({'html': html})
 
-    # ✅ Normal page load
     return render(request, 'shop/shop.html', {
         'products': products,
         'categories': categories,
@@ -395,7 +393,7 @@ def checkout_view(request):
                         'product_data': {
                             'name': f'Order #{request.user.id}',
                         },
-                        'unit_amount': int(total_amount * 100),  # paise
+                        'unit_amount': int(total_amount * 100),
                     },
                     'quantity': 1,
                 }],
@@ -455,7 +453,6 @@ def stripe_success(request):
 
     items.delete()
 
-    # After order creation
     subject = f"Order Confirmation - #{order.id}"
     message = f"Hi {request.user.username},\n\n" \
           f"Your online payment for order #{order.id} of ₹{total_amount:.2f} has been received.\n" \
@@ -585,7 +582,6 @@ def buy_now_success(request, product_id):
        paid_at=timezone.now() 
     )
 
-    # After order creation
     subject = f"Order Confirmation - #{order.id}"
     message = f"Hi {request.user.username},\n\n" \
           f"Your online payment for order #{order.id} of ₹{total_amount:.2f} has been received.\n" \
@@ -758,8 +754,6 @@ def add_product(request, product_id=None):
         image = request.FILES.get('image')
         description = request.POST.get("description")
         offer_price = request.POST.get("offer_price") or None
-
-        # NEW — GST fields
         gst_id = request.POST.get("gst")
 
         if product:
@@ -875,7 +869,6 @@ def admin_reports(request):
     elif filter_type == 'payments':
         data = Payment.objects.all()
 
-        # ✅ USE paid_at HERE
         if from_date:
             data = data.filter(paid_at__gte=from_date)
         if to_date:

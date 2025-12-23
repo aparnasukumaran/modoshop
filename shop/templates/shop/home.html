@@ -6,21 +6,20 @@
 
 
 <section class="hero-mag">
-<!-- 
-      <div class="nav-accent">
+
+
+
+    <div class="nav-accent">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0 H1200 V80 C900,120 300,120 0,80 Z"/>
+            <path d="M0,0 H1200 V80 C900,120 300,120 0,80 Z" />
         </svg>
-    </div> -->
-
+    </div> 
     <div class="hero-mag-inner">
-
-        <!-- LEFT TEXT -->
         <div class="hero-mag-text">
             <span class="hero-pill">✨ New Season</span>
 
             <h1>
-                Discover Your Style
+                Discover Your <br> Style
                 <span>With Premium Collections</span>
             </h1>
 
@@ -32,31 +31,32 @@
                 Shop Now →
             </a>
         </div>
-
-        <!-- RIGHT STACKED IMAGES -->
         <div class="hero-mag-stack">
 
             <div class="stack-img img-1">
-             
+
             </div>
 
             <div class="stack-img img-2">
-            
+
             </div>
 
             <div class="stack-img img-3">
-               
+
             </div>
 
-            <!-- soft accent shape -->
             <svg class="stack-blob" viewBox="0 0 200 200">
-                <path d="M42,-62C55,-52,66,-42,70,-30C75,-18,73,-4,66,7C59,18,48,27,36,38C25,48,12,61,-2,64C-16,67,-32,61,-45,51C-58,41,-68,26,-72,10C-76,-6,-74,-22,-66,-35C-58,-48,-44,-58,-29,-66C-14,-73,1,-76,15,-72C29,-68,43,-57,42,-62Z"
-                      transform="translate(100 100)" />
+                <path
+                    d="M42,-62C55,-52,66,-42,70,-30C75,-18,73,-4,66,7C59,18,48,27,36,38C25,48,12,61,-2,64C-16,67,-32,61,-45,51C-58,41,-68,26,-72,10C-76,-6,-74,-22,-66,-35C-58,-48,-44,-58,-29,-66C-14,-73,1,-76,15,-72C29,-68,43,-57,42,-62Z"
+                    transform="translate(100 100)" />
             </svg>
 
         </div>
     </div>
 </section>
+
+
+<div class="section-divider"></div>
 
 <!-- _________________________________________________________________________ -->
 
@@ -65,23 +65,23 @@
     <h2 class="text-center fw-bold mb-4">Shop by Category</h2>
 
     <div class="row g-4">
-    {% for category in categories %}
-    <div class="col-6 col-md-3">
-  <div class="category-card">
-    {% if category.image %}
-        <img src="{{ category.image.url }}" class="w-100" alt="{{ category.name }}">
-    {% else %}
-        <img src="{% static 'images/default-category.png' %}" class="w-100" alt="{{ category.name }}">
-    {% endif %}
+        {% for category in categories %}
+        <div class="col-6 col-md-3">
+            <div class="category-card">
+                {% if category.image %}
+                <img src="{{ category.image.url }}" class="w-100" alt="{{ category.name }}">
+                {% else %}
+                <img src="{% static 'images/default-category.png' %}" class="w-100" alt="{{ category.name }}">
+                {% endif %}
 
-    <h5 class="cat-title text-center">{{ category.name }}</h5>
-    <a href="{% url 'category_detail' category.slug %}" class="cat-title-btn">Explore</a>
-</div>
+                <h5 class="cat-title text-center">{{ category.name }}</h5>
+                <a href="{% url 'category_detail' category.slug %}" class="cat-title-btn">Explore</a>
+            </div>
 
-</div>
+        </div>
 
-    {% endfor %}
-</div>
+        {% endfor %}
+    </div>
 
 </div>
 

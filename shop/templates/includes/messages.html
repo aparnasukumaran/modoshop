@@ -11,89 +11,117 @@
 {% endif %}
 
 <style>
-/* Wrapper fixed at top */
-.messages-wrapper {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 400px;
-    z-index: 1050;
-    pointer-events: none; /* allows clicking through wrapper except buttons */
-}
+    .messages-wrapper {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        z-index: 1050;
+        pointer-events: none;
+    }
 
-/* Individual messages */
-.messages {
-    position: relative;
-    margin: 10px 0;
-    padding: 12px 45px 12px 15px;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    opacity: 1;
-    transition: all 0.4s ease;
-    pointer-events: auto;
-}
+    .messages {
+        position: relative;
+        margin: 10px 0;
+        padding: 12px 45px 12px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        transition: all 0.4s ease;
+        pointer-events: auto;
+    }
 
-/* Message types */
-.messages.success { background-color: #28a745; }
-.messages.error   { background-color: #dc3545; }
-.messages.warning { background-color: #ffc107; color: #333; }
-.messages.info    { background-color: #17a2b8; }
+    .messages.success {
+        background-color: #28a745;
+    }
 
-/* Close button */
-.messages .close-btn {
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: inherit;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+    .messages.error {
+        background-color: #dc3545;
+    }
 
-/* Hover effect for close button */
-.messages .close-btn:hover {
-    opacity: 0.7;
-}
+    .messages.warning {
+        background-color: #ffc107;
+        color: #333;
+    }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-    .messages-wrapper { width: 95%; }
-    .messages { font-size: 13px; padding: 10px 40px 10px 12px; }
-    .messages .close-btn { font-size: 14px; right: 10px; }
-}
+    .messages.info {
+        background-color: #17a2b8;
+    }
 
-@media (max-width: 480px) {
-    .messages-wrapper { width: 98%; }
-    .messages { font-size: 12px; padding: 8px 35px 8px 10px; }
-    .messages .close-btn { font-size: 12px; right: 8px; }
-}
+    .messages .close-btn {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: inherit;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .messages .close-btn:hover {
+        opacity: 0.7;
+    }
+
+
+    @media (max-width: 768px) {
+        .messages-wrapper {
+            width: 95%;
+        }
+
+        .messages {
+            font-size: 13px;
+            padding: 10px 40px 10px 12px;
+        }
+
+        .messages .close-btn {
+            font-size: 14px;
+            right: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .messages-wrapper {
+            width: 98%;
+        }
+
+        .messages {
+            font-size: 12px;
+            padding: 8px 35px 8px 10px;
+        }
+
+        .messages .close-btn {
+            font-size: 12px;
+            right: 8px;
+        }
+    }
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.messages').forEach(msg => {
-        // Auto fade after 4 seconds
-        setTimeout(() => {
-            msg.style.opacity = '0';
-            msg.style.transform = 'translateY(-10px)';
-            setTimeout(() => msg.remove(), 400);
-        }, 4000);
-
-        // Close button
-        const btn = msg.querySelector('.close-btn');
-        if (btn) {
-            btn.addEventListener('click', () => {
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.messages').forEach(msg => {
+            // Auto fade
+            setTimeout(() => {
                 msg.style.opacity = '0';
                 msg.style.transform = 'translateY(-10px)';
                 setTimeout(() => msg.remove(), 400);
-            });
-        }
+            }, 4000);
+
+            // Close 
+            const btn = msg.querySelector('.close-btn');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    msg.style.opacity = '0';
+                    msg.style.transform = 'translateY(-10px)';
+                    setTimeout(() => msg.remove(), 400);
+                });
+            }
+        });
     });
-});
 </script>
