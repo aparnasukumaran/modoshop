@@ -3,28 +3,30 @@
 A modern e-commerce website built with **Django**, featuring product browsing, shopping cart, and online checkout.
 
 ## Live Demo
-Check out the live site: [https://your-live-site.com](https://your-live-site.com)
+Check out the live site:https://modoshop.pythonanywhere.com/
 
 ## Features
 - User Authentication (Register, Login, Logout)
 - Product Listing & Categories
+- Product Search
 - Wishlist (Add products to wishlist for later)
 - Cart & Checkout
 - Payment Options: Online (Stripe) or Cash on Delivery
-- Order Management
 - Admin Panel for managing products, orders, and payments
+- Report download in PDF / Excel / Print
+- Admin Panel with CRUD operations and Date-based filtering for orders and reports
 
 
 ## Tech Stack
 - **Backend:** Django 4.1
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap
 - **Database:** MySQL
-- **Payment Gateways:** Stripe & Razorpay
+- **Payment Gateways:** Stripe
   
 ## Screenshots
 ## User Side
 <div style="display:flex; flex-wrap: wrap; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/c6d22d49-29b0-4037-87ac-968fa2281d3b" alt="Home Page" width="300">
+  <img src="https://github.com/user-attachments/assets/90788d7f-321f-4901-bea1-b9e17a655c96" alt="Home Page" width="300">
   <img src="https://github.com/user-attachments/assets/dae73bd7-bee0-458c-abf8-b84c4cafdc29" alt="Cart Page" width="300">
   <img src="https://github.com/user-attachments/assets/016a1fe9-d945-43fd-87e2-eced9882434c" alt="Shop Page" width="300">
   <img src="https://github.com/user-attachments/assets/d72507f0-0005-47b2-ab24-9e42a167e31f" alt="Profile Page" width="300">
