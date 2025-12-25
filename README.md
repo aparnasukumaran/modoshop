@@ -46,5 +46,5 @@ Check out the live site:https://modoshop.pythonanywhere.com/
 
 ## Author
 **Aparna Krishna u s
-- GitHub: [aparnasukumaran](https://github.com/aparnasukumaran)  
+- clone: 
 - Email: aparnasukumaran9418@gmail.com
