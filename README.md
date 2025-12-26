@@ -1,4 +1,4 @@
-# ModoShop - Django E-Commerce Website
+## ModoShop - Django E-Commerce Website
 
 A modern e-commerce website built with **Django**, featuring product browsing, shopping cart, and online checkout.
 
