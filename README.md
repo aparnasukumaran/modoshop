@@ -3,7 +3,10 @@
 A modern e-commerce website built with **Django**, featuring product browsing, shopping cart, and online checkout.
 
 ## Live Demo
-Check out the live site:https://modoshop.pythonanywhere.com/
+https://modoshop.pythonanywhere.com/
+
+## GitHub Repository
+https://github.com/aparnakrishnaus/modoshop
 
 ## Features
 - User Authentication (Register, Login, Logout)
@@ -43,4 +46,3 @@ Check out the live site:https://modoshop.pythonanywhere.com/
 
 ## Author
 **Aparna Krishna u s
-- clone: https://github.com/aparnakrishnaus/modoshop.git
